@@ -1,9 +1,14 @@
-import { ChangeDetectionStrategy, Component, OnInit, VERSION } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  VERSION
+} from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 import { AppState } from "./store/app.state";
 import { Todo } from "./store/models/todo";
-import { AddTodoAction } from "./store/todo.action";
+import { AddTodoAction, LoadTodoAction } from "./store/todo.action";
 import {
   selectCompletedTodos,
   selectUncompletedTodos
@@ -24,6 +29,9 @@ export class AppComponent implements OnInit {
 
   constructor(private store: Store<AppState>) {}
   ngOnInit(): void {
+
+    this.store.dispatch(new LoadTodoAction())
+
 
     this.completedTodos$ = this.store.select(state =>
       selectCompletedTodos(state.todoState)

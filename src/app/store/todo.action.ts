@@ -17,7 +17,7 @@ export class LoadTodoAction implements Action {
 
 export class LoadTodoActionSuccess implements Action {
   readonly type = TodoActionTypes.LOAD_TODO_SUCCESS;
-  constructor(payload: Todo[]) {}
+  constructor(public payload: Todo[]) {}
 }
 
 export class LoadTodoActionFailure implements Action {
