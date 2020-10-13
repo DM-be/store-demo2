@@ -11,11 +11,14 @@ import { TodoReducer } from "./store/todo.reducer";
 import { TodoListComponent } from "./store/todo-list/todo-list.component";
 import { DataService } from "./data.service";
 import { TodoEffects } from "./store/todo.effects";
+import { HttpClientModule, HttpClient } from "@angular/common/http";
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClient,
+    HttpClientModule,
     EffectsModule.forRoot([TodoEffects]),
     StoreModule.forRoot(
       {
