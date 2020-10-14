@@ -4,28 +4,28 @@ import { FormsModule } from "@angular/forms";
 import { StoreModule } from "@ngrx/store";
 import { AppComponent } from "./app.component";
 
-
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { TodoComponent } from './todo/todo.component';
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { TodoComponent } from "./todo/todo.component";
 import { TodoReducer } from "./store/todo.reducer";
-import { TodoListComponent } from './store/todo-list/todo-list.component';
+import { TodoListComponent } from "./store/todo-list/todo-list.component";
 import { EffectsModule } from "@ngrx/effects";
 import { HttpClientModule } from "@angular/common/http";
-import { DataService } from './data.service';
+import { DataService } from "./data.service";
+import { TodoEfects } from "./store/todo.effects";
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    //EffectsModule.forRoot([TodoEffects]),
+    EffectsModule.forRoot([TodoEfects]),
     StoreModule.forRoot(
       {
         todoState: TodoReducer
       },
       {}
     ),
-     StoreDevtoolsModule.instrument(),
+    StoreDevtoolsModule.instrument()
   ],
   declarations: [AppComponent, TodoComponent, TodoListComponent],
   bootstrap: [AppComponent],
