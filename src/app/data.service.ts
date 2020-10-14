@@ -5,13 +5,9 @@ import { Todo } from "./store/models/todo";
 
 @Injectable()
 export class DataService {
-  private BASE_URL: string = "https://night-thread-uranium.glitch.me/";
+  private BASE_URL: string = "https://night-thread-uranium.glitch.me/todos";
 
   constructor(private http: HttpClient) {}
 
-  public getTodos(): Observable<Todo[]> {
-    return this.http.get<Todo[]>(this.BASE_URL);
-  }
-
-
+  // implement get todos
 }

@@ -18,7 +18,7 @@ import { TodoEfects } from "./store/todo.effects";
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    EffectsModule.forRoot([TodoEfects]),
+    EffectsModule.forRoot([TodoEfects]), // register our effects
     StoreModule.forRoot(
       {
         todoState: TodoReducer

@@ -8,11 +8,7 @@ export function TodoReducer(
   action: TodoAction
 ): TodoState {
   switch (action.type) {
-    case TodoActionTypes.LOAD_TODO_SUCCESS:
-      console.log(action);
-      return {
-        todoList: action.payload
-      };
+    // implement load_todos success
     case TodoActionTypes.ADD_TODO: {
       const todo: Todo = {
         id: uuidv4(),
