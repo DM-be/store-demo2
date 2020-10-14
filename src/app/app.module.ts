@@ -10,11 +10,14 @@ import { TodoComponent } from './todo/todo.component';
 import { TodoReducer } from "./store/todo.reducer";
 import { TodoListComponent } from './store/todo-list/todo-list.component';
 import { EffectsModule } from "@ngrx/effects";
+import { HttpClientModule } from "@angular/common/http";
+import { DataService } from './data.service';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     //EffectsModule.forRoot([TodoEffects]),
     StoreModule.forRoot(
       {
@@ -25,6 +28,7 @@ import { EffectsModule } from "@ngrx/effects";
      StoreDevtoolsModule.instrument(),
   ],
   declarations: [AppComponent, TodoComponent, TodoListComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [DataService]
 })
 export class AppModule {}
