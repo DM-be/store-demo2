@@ -9,11 +9,13 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TodoComponent } from './todo/todo.component';
 import { TodoReducer } from "./store/todo.reducer";
 import { TodoListComponent } from './store/todo-list/todo-list.component';
+import { EffectsModule } from "@ngrx/effects";
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+    //EffectsModule.forRoot([TodoEffects]),
     StoreModule.forRoot(
       {
         todoState: TodoReducer
