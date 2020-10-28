@@ -7,7 +7,7 @@ import { AppComponent } from "./app.component";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { TodoComponent } from "./todo/todo.component";
 import { TodoReducer } from "./store/todo.reducer";
-import { TodoListComponent } from "./store/todo-list/todo-list.component";
+import { TodoListComponent } from "./todo-list/todo-list.component";
 import { EffectsModule } from "@ngrx/effects";
 import { HttpClientModule } from "@angular/common/http";
 import { DataService } from "./data.service";
