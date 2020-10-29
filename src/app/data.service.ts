@@ -10,4 +10,7 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   // implement get todos
+  public getTodos(): Observable<Todo[]> {
+    return this.http.get<Todo[]>(this.BASE_URL);
+  }
 }

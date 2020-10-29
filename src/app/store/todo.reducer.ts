@@ -8,6 +8,16 @@ export function TodoReducer(
   action: TodoAction
 ): TodoState {
   switch (action.type) {
+    case TodoActionTypes.LOAD_TODO_SUCCESS: {
+      const todos = action.payload;
+      return {
+        todoList: todos
+      };
+    }
+    case TodoActionTypes.LOAD_TODO_FAILURE: {
+      console.log(action.payload); // error
+      return state;
+    }
     // implement load_todos success
     case TodoActionTypes.ADD_TODO: {
       const todo: Todo = {
